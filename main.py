@@ -6,7 +6,7 @@ import streamlit.components.v1 as components
 im = Image.open("./assets/images/RS-square-logo.jpeg")
 
 st.set_page_config(
-    layout="wide", page_title="RiskSpotlight - OpRisk Risk Guidance", page_icon=im
+    layout="wide", page_title="RiskSpotlight - Risk Description Reviewer", page_icon=im
 )
 
 hide_streamlit_style = """
@@ -18,9 +18,9 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-st.title("OpRisk Risk Guidance")
+st.title("Risk Description Reviewer")
 
-risk_description = st.text_area("Please provide Risk Description.", value="", height=120)
+risk_description = st.text_area("Please provide Risk Description.", value="", height=300)
 clicked = st.button("Submit")
 
 
