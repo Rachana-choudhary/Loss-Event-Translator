@@ -1,7 +1,6 @@
 import streamlit as st
 import json
 import pandas as pd
-from bs4 import BeautifulSoup
 import prompting
 from PIL import Image
 import streamlit.components.v1 as components
