@@ -8,7 +8,7 @@ import streamlit.components.v1 as components
 im = Image.open("./assets/images/RS-square-logo.jpeg")
 
 st.set_page_config(
-    layout="wide", page_title="RiskSpotlight - Process RCSA", page_icon=im
+    layout="wide", page_title="RiskSpotlight - Loss Event Translator", page_icon=im
 )
 
 hide_streamlit_style = """
@@ -30,11 +30,8 @@ with col1:
     clicked = st.button("Submit")
 
 with col2:
-    num_languages = st.number_input(
-        "No. of languages", min_value=3, max_value=6
-    )
-    language_category = st.multiselect(
-        "Language Categories",
+    languages = st.multiselect(
+        "Language",
         ["English", 
         "French",
         "German",
@@ -44,12 +41,12 @@ with col2:
     )
 
 if clicked:
-    if not loss_event or not num_languages or not language_category:
+    if not loss_event or not languages:
         st.warning("Please fill in all the information.")
 
     else:
         with st.spinner("Please wait..."):
-            response = prompting.generate_description(loss_event, num_languages, language_category)
+            response = prompting.generate_description(loss_event, languages)
 
             loss_event_output = response["choices"][0]["message"]["content"]       
             st.write(loss_event_output)    
