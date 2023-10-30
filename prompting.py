@@ -8,7 +8,7 @@ import streamlit as st
 
 openai.api_key = st.secrets["openai_api_key"]
 
-def generate_description(loss_event, num_languages, language_category):
+def generate_description(loss_event, languages):
     risk_titles = f"""As an expert in translating operational risk loss event descriptions, please translate the provided loss event description: {loss_event} into following languages: {languages}. Please ensure the translations are accurate and take the necessary time for precision. Use BOLD for the language name and standard font for the description."""
 
     response = openai.ChatCompletion.create(
