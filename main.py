@@ -31,7 +31,7 @@ with col1:
 
 with col2:
     languages = st.multiselect(
-        "Language",
+        "Languages",
         ["English", 
         "French",
         "German",
