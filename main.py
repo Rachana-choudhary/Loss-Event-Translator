@@ -37,7 +37,9 @@ with col2:
         "German",
         "Spanish",
         "Itanlian",
-        "Chinese",],
+        "Chinese",
+        "Arabic",
+        "Greek"],
     )
 
 if clicked:
